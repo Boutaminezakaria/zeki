@@ -1,35 +1,27 @@
+#include "mainwindow.h"
 #include <QApplication>
-#include <iostream>
-
-#include <QDebug>
-#include <QtSql>
-#include <QtSql/QSql>
-#include <QtSql/QSqlQuery>
-#include "QMessageBox"
-#include "zakaria.h"
-
-#define q2c(string) string.toStdString()
+#include <QMessageBox>
+#include "connection.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Zakaria w;
-    w.setWindowTitle("Securite");
-    QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
-        db.setHostName("localhost");
-        db.setUserName("zakaria");
-        db.setPassword("esprit2018");
-        db.setDatabaseName("source_Projet2A");
-    QSqlQuery q;
-        if(db.open())
-        {
-            std::cout << "Vous êtes maintenant connecté à " << q2c(db.hostName()) << std::endl;
-         //db.close();
-        }
-        else
-        {
-            std::cout << "La connexion a échouée, désolé" << std::endl;
-        //qDebug()<<"erreur:"<<db.lastError().text();
-        }
-        w.show();
+    MainWindow w;
+
+
+
+    Connection c;
+       bool test=c.createconnect();
+       if(test)
+       {w.show();
+           QMessageBox::information(nullptr, QObject::tr("database is open"),
+                       QObject::tr("connection successful.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+   }
+       else
+           QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                       QObject::tr("connection failed.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
     return a.exec();
 }

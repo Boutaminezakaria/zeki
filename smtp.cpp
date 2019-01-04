@@ -1,4 +1,5 @@
 #include "smtp.h"
+
 Smtp::Smtp( const QString &user, const QString &pass, const QString &host, int port, int timeout )
 {
     socket = new QSslSocket(this);
@@ -98,15 +99,7 @@ void Smtp::readyRead()
 
         state = HandShake;
     }
-    //No need, because I'm using socket->startClienEncryption() which makes the SSL handshake for you
-    /*else if (state == Tls && responseLine == "250")
-    {
-        // Trying AUTH
-        qDebug() << "STarting Tls";
-        *t << "STARTTLS" << "\r\n";
-        t->flush();
-        state = HandShake;
-    }*/
+
     else if (state == HandShake && responseLine == "250")
     {
         socket->startClientEncryption();
@@ -117,7 +110,7 @@ void Smtp::readyRead()
         }
 
 
-        //Send EHLO once again but now encrypted
+
 
         *t << "EHLO localhost" << "\r\n";
         t->flush();
@@ -205,4 +198,3 @@ void Smtp::readyRead()
     }
     response = "";
 }
-

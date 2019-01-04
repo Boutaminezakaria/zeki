@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/BC3_Cocina_1.jpg</file>
+        <file>image/the-button-1161331_960_720.png</file>
+        <file>image/the-button-116133.png</file>
+        <file>image/repas.png</file>
+        <file>image/the-button-1161331_960_720 copie.png</file>
+        <file>image/consultertiroir.png</file>
+        <file>image/68401122-refrigerator-wallpapers.jpg</file>
+        <file>image/ok.png</file>
+        <file>image/fond.png</file>
+        <file>image/fl.png</file>
+        <file>image/fleche d.png</file>
+        <file>image/Sans.png</file>
+        <file>image/sup.png</file>
+        <file>image/supr.png</file>
+        <file>image/modif.png</file>
+        <file>image/mpd.png</file>
+        <file>image/super.png</file>
+        <file>image/600.jpg</file>
+        <file>image/ajou20.png</file>
+        <file>image/confood.png</file>
+        <file>image/TIR.png</file>
+        <file>image/the-button-110.png</file>
+        <file>image/fruit.png</file>
+        <file>image/Sans titre-1.png</file>
+        <file>image/chicken.png</file>
+        <file>image/kiss.jpg</file>
+        <file>image/gmail-email-mail-logo-circle-material.png</file>
+        <file>image/network-security-logo-1.png</file>
+        <file>image/logo.png</file>
+        <file>image/error-803716_960_720.png</file>
+        <file>image/plus.png</file>
+        <file>image/templogo_read.png</file>
+        <file>image/corbeille-windows.png</file>
+        <file>image/FUITES-GAZ.png</file>
+        <file>image/incendie.png</file>
+        <file>image/notepad-icon.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>image/fond.png</file>
+        <file>image/ajou20.png</file>
+        <file>image/confood.png</file>
+    </qresource>
+</RCC>
